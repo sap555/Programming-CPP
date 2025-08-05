@@ -62,6 +62,26 @@ class DTriangle : public Triangle {
 		std::cout << "Area of 3D Triangle is " << (0.5 * base * height * depth) << std::endl;
 	}
 };
+class DRectangle : public Rectangle{
+    public:	
+	DRectangle(){
+		width = 5; length = 10; height = 5;
+	}
+	void findArea(){
+		std::cout << "Area of 3D rectangle is " << 2 *((length * width) + (length * height) + (width * height)) << std::endl;
+	}
+      };
+      
+class DCircle : public Circle{
+	public:	
+	DCircle(double rr) : Circle(rr){
+		radius = rr;
+	}
+	void findArea() {
+		std::cout << "Area of sphere is " << (4*(M_PI) * radius * radius) << std::endl;
+	}
+      };
+      
 int main() {
 	Triangle tr;
 	tr.findArea();
@@ -78,6 +98,11 @@ int main() {
 	DTriangle tr3;
 	tr3.findArea();
 	tr3.perimeter();
-
+	
+	DRectangle Drec;
+	Drec.findArea();
+	
+	DCircle DC(5);
+	DC.findArea();
 	return 0;
 }
